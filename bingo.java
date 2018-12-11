@@ -148,13 +148,13 @@ Public class bingo
       while(j<5)
       {
         //Imprimir numero
-						System.out.print(matriz[i][j]);
-						//acumular contador columna
-							 j=j+1;
+	      System.out.print(matriz[i][j]);
+	//acumular contador columna
+	      j=j+1;
       }
       System.out.println("|");
       //Acumular contador fila
-      i=i+1;
+    	  i=i+1;
       
     }
   }
