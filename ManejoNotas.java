@@ -56,6 +56,135 @@ Public class ManejoNotas{
  //FIN MAIN }
   
   
+//FUNCIONES
+public int[][] generarMatriz(int f,int c,int min,int max)
+{
+	int[][] matriz=new int[f][c];
+	//Procesos 
+	//iniciar contador
+	int J;
+	int I =0;
+	//generar fila y acumular contador
+	while(I<f)
+	{
+		J=0;
+		//generar numero y acumular contador
+		while(J<c)
+		{
+			//agregar numero entre 1 y 7 a la casilla
+			matriz[I][J]=(int)(Math.random()*max)+1;
+			//acumular contador columna
+			J=J+1;
+		}
+		//acumular contador columna
+		I=I+1;
+		
+	}
+	//Entregar matriz
+	return matriz;
+
+}
+
+public double[] calcularPromedios(int f,int c)
+{
+	double [] arr=new double[f];
+	//Procesos
+	//Iniciar contador
+	int J,total;
+	int I=0;
+	//acumular cada fila y acumular contador
+	while(I<f)
+	{
+		J=0;
+		total=0;
+		//acumular total fila y acumular contador
+		while(J<c)
+		{
+			//acumular el total
+			total=total+M[I][J];
+			//acumular contador columna
+			J=J+1;
+		}
+		//calcular y agregar promedio a arreglo
+		 double prom=total/5;
+		 arr[I]=prom;
+		//acumular contador fila
+		I=I+1;
+	}
+	//entregar arreglo promedios
+	return arr;
+}
+				
+				
+public void mostrarMatriz(int f, int c,int [][]matriz)
+{
+	//Procesos 
+	//iniciar contador
+	int J;
+	int I =0;
+	//imprimir fila y acumular contador
+	while(I<f)
+	{
+		J=0;
+		//imprimir numero y acumular contador
+		while(J<c)
+		{
+			//agregar numero entre 1 y 7 a la casilla
+			System.out.print(matriz[I][J]+" ");
+			//acumular contador columna
+			J=J+1;
+		}
+		//acumular contador columna
+		System.out.println("|");
+		I=I+1;
+		
+		
+	}
+}
+public void mostrarArreglo(int N, double[] arr)
+{
+	//Procesos
+	//iniciar contador
+	int cont =0;
+	//mostrar arreglo
+	while(cont<N)
+	{
+		//mostrar dato
+		System.out.println(arr[cont]);
+		//acumular contador
+		cont=cont+1;
+	}
+}
+public void ordenarArreglo(int N,double[] arr)
+{
+	//Procesos
+	//Iniciar variables
+	int J;
+	double temp;
+	int I=0;
+	//ordenar numeros
+	while(I<N)
+	{
+		//Iniciar contador
+		J=0;
+		//comparar y mover mayor
+		while(J<(N-I))
+		{
+			//comparar numero con anterior
+			if(arr[J-1]<arr[J])
+			{
+				//Cambiar valores de posicion
+				temp=arr[J-1];
+				arr[J-1]=arr[J];
+				arr[J]=temp;
+			}
+			//acumular contador
+			J=J+1;
+		}
+		//acumular contador
+		I=I+1;
+	}
+}
   
   
 }
